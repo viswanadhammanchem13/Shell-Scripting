@@ -1,4 +1,7 @@
 #!/bin/bash
 
 Movie=("Court" "HIT3" "Puspha2" "Thandel")
-echo "First Movie of: ${Movie[0]}" #Index 0 also consedering
+echo "First Movie of: ${Movie[0]}" #${} We saying to consider as whole varabel
+echo "third Movie of: ${Movie[0]}"
+echo "All Movies of: ${Movie[@]}"
+echo "Fifth Movie of: ${Movie[5]}"
