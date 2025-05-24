@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Person1=Trump # No Space after Equal
+Person1=Modi # No Space after Equal
 Person2=Mask
 echo "$Person1:: Hey, $Person2 How are you?"
 echo "$Person2:: Hello $Person1. I am fine, how are you doing"
