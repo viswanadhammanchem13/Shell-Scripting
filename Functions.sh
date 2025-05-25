@@ -9,11 +9,11 @@ else
     echo "You have root access. Proceeding to install MySQL Agent..."
 fi
 Validate(){
-    if [ $? -eq 0 ]
+    if [ $1 -eq 0 ]
    then
-      echo "Installed MySql...Success"
+      echo "Installed $2...Success"
    else
-      echo "MySql Installation is failed"
+      echo "$2 Installation is failed"
       exit 1
     fi
 }
