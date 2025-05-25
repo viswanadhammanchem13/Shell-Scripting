@@ -14,9 +14,9 @@ Validate(){
       echo "Installed $2...Success"
    else
       echo "$2 Installation is failed"
-      exit 1
     fi
 }
+
 dnf list installed mysql #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
 if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
@@ -25,8 +25,8 @@ then
    Validate $? "MySql"  
 else
    echo " My Sql Already Installed"
-   exit 1
 fi
+
 dnf list installed python3 #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
 if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
@@ -35,8 +35,8 @@ then
    Validate $? "python3"  
 else
    echo " python3 Already Installed"
-   exit 1
 fi
+
 dnf list installed nginx #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
 if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
@@ -45,5 +45,4 @@ then
    Validate $? "nginx"  
 else
    echo " nginx Already Installed"
-   exit 1
 fi
