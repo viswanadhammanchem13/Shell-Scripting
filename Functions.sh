@@ -18,7 +18,7 @@ Validate(){
     fi
 }
 dnf list installed mysql #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
-if [ $? -ne 0] #If $? Not equal to Zero then it will install SQL
+if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
    echo " My Sql is not installed-----Going to install"
    dnf install mysql -y #Install My Sql
@@ -28,7 +28,7 @@ else
    exit 1
 fi
 dnf list installed Python3 #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
-if [ $? -ne 0] #If $? Not equal to Zero then it will install SQL
+if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
    echo " Python3 is not installed-----Going to install"
    dnf install Python -y #Install My Sql
@@ -38,7 +38,7 @@ else
    exit 1
 fi
 dnf list installed nginx #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
-if [ $? -ne 0] #If $? Not equal to Zero then it will install SQL
+if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
    echo " nginx is not installed-----Going to install"
    dnf install nginx -y #Install My Sql
