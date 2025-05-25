@@ -27,11 +27,11 @@ else
    echo " My Sql Already Installed"
    exit 1
 fi
-dnf list installed Python3 #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
+dnf list installed python3 #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
 if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
    echo " Python3 is not installed-----Going to install"
-   dnf install Python -y #Install My Sql
+   dnf install python3 -y #Install My Sql
    Validate $? "Python3"  
 else
    echo " Python3 Already Installed"
