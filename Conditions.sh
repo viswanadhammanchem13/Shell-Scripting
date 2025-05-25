@@ -6,3 +6,4 @@ then
    echo "Given $Number is lessthan 10"
 else
    echo "Given $Number is Greathan 10"
+fi
