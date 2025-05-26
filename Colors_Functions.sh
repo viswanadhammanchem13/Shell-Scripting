@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[om"
 
 if [ "$USERID" -ne 0 ]; then
-    echo -e " $R You do not have root access. Please run this script as root.$N"
+    echo -e " $R You do not have root access. Please run this script as root. $N"
     exit 1
 else
     echo -e "$Y You have root access. Proceeding to install Package... $N"
@@ -25,7 +25,7 @@ Validate(){ # Takes the i/p from Exit status,what command they tried to install
 dnf list installed mysql #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
 if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
 then
-   echo -e  " $Y My Sql is not installed-----Going to install$N"
+   echo -e  " $Y My Sql is not installed-----Going to install $N"
    dnf install mysql -y #Install My Sql
    Validate $? "MySql" # Function calling 
 else
