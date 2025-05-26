@@ -4,7 +4,7 @@ USERID=$(id -u) #Checks userId
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-N="\e[om"
+N="\e[0m"
 
 if [ "$USERID" -ne 0 ]; then
     echo -e " $R You do not have root access. Please run this script as root. $N"
