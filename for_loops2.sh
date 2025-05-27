@@ -8,7 +8,7 @@ N="\e[0m"
 LOGS_DIR="/var/log/shellscript-logs" #Mention to Save the logs in this Dir
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1) #Rename the script file from Redirections.sh to Redirections
 LOG_FILE="$LOGS_DIR/$SCRIPT_NAME.log" #Save the log file as Redirections.log under shellscript-logs DIR 
-PACKAGES=("mysql" "python" "nginx" "httpd") #Install all packages at a time
+PACKAGES=("python" "nginx" "httpd" "mysql") #Install all packages at a time
 
 mkdir -p $LOGS_DIR #Creates LOG_DIR
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE #Captures the Time when script is started
@@ -28,7 +28,7 @@ Validate(){ # Takes the i/p from Exit status,what command they tried to install
       echo  -e "$2 $R Installation is failed $N" | tee -a $LOG_FILE
     fi
 }
-for package in {$PACKAGES [@] }
+for package in {$PACKAGES[@]}
 do
     dnf list installed $package &>>$LOG_FILE #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
     if [ $? -ne 0 ] #If $? Not equal to Zero then it will install Package
