@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 LOGS_DIR="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_DIR$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_DIR/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_DIR
 echo "Script started executing at: $(date)" &>>$LOG_FILE
