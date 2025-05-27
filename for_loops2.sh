@@ -28,7 +28,7 @@ Validate(){ # Takes the i/p from Exit status,what command they tried to install
       echo  -e "$2 $R Installation is failed $N" | tee -a $LOG_FILE
     fi
 }
-for package in {$PACKAGES[@]}
+for package in ${PACKAGES[@]}
 do
     dnf list installed $package &>>$LOG_FILE #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
     if [ $? -ne 0 ] #If $? Not equal to Zero then it will install Package
