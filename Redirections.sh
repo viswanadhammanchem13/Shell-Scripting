@@ -5,15 +5,15 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-LOGS_DIR="/var/log/shellscript-logs"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_DIR/$SCRIPT_NAME.log"
+LOGS_DIR="/var/log/shellscript-logs" #Mention to Save the logs in this Dir
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1) #Rename the script file from Redirections.sh to Redirections
+LOG_FILE="$LOGS_DIR/$SCRIPT_NAME.log" #Save the log file as Redirections.log under shellscript-logs DIR 
 
-mkdir -p $LOGS_DIR
-echo "Script started executing at: $(date)" &>>$LOG_FILE
+mkdir -p $LOGS_DIR #Creates LOG_DIR
+echo "Script started executing at: $(date)" &>>$LOG_FILE #Captures the Time when script is started
 
 if [ "$USERID" -ne 0 ]; then
-    echo -e " $R You do not have root access. Please run this script as root. $N" &>>$LOG_FILE
+    echo -e " $R You do not have root access. Please run this script as root. $N" &>>$LOG_FILE 
     exit 1
 else
     echo -e "$Y You have root access. Proceeding to install Package... $N" &>>$LOG_FILE
