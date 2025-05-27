@@ -45,7 +45,7 @@ then
    dnf install python3 -y  &>>$LOG_FILE#Install python3
    Validate $? "python3" # Function calling  
 else
-   echo-e " $Y python3 Already Installed $N" &>>$LOG_FILE
+   echo -e " $Y python3 Already Installed $N" &>>$LOG_FILE
 fi
 
 dnf list installed nginx &>>$LOG_FILE #Checks nginx Installed or not, $? Should be equal to zero then only nginx Installation is succussful
