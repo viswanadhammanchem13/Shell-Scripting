@@ -53,7 +53,7 @@ if [ $? -ne 0 ] #If $? Not equal to Zero then it will install nginx
 then
    echo-e  " $Y nginx is not installed-----Going to install $N" &>>$LOG_FILE
    dnf install nginx -y &>>$LOG_FILE #Install nginx
-   Validate $? "nginx" &>>$LOG_FILE # Function calling  
+   Validate $? "nginx"  # Function calling  
 else
    echo -e "$Y nginx Already Installed $N" &>>$LOG_FILE
 fi
