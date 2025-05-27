@@ -29,13 +29,15 @@ Validate(){ # Takes the i/p from Exit status,what command they tried to install
     fi
 }
 for package in {$PACKAGES[@]}
-
-dnf list installed $package &>>$LOG_FILE #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
-if [ $? -ne 0 ] #If $? Not equal to Zero then it will install SQL
-then
-   echo -e  " $Y $package is not installed-----Going to install $N" | tee -a $LOG_FILE
-   dnf install $package -y &>>$LOG_FILE #Install My Sql
-   Validate $? "$package" # Function calling 
-else
-   echo -e " $Y $package Already Installed $N" | tee -a $LOG_FILE
-fi
+do
+    dnf list installed $package &>>$LOG_FILE #Checks MySQL Installed or not, $? Should be equal to zero then only My Sql Installation is succussful
+    if [ $? -ne 0 ] #If $? Not equal to Zero then it will install Package
+    then
+        echo -e  " $Y $package is not installed-----Going to install $N" | tee -a $LOG_FILE
+        dnf install $package -y &>>$LOG_FILE #Install My Sql
+        Validate $? "$package" # Function calling 
+    else
+        echo -e " $Y $package Already Installed $N" | tee -a $LOG_FILE
+    fi
+done
+    
